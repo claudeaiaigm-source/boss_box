@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>BossBox 🥊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Shade&family=Outfit:wght@400;700;900&display=swap" />
+    <style>
+      html, body, #root {
+        margin: 0; padding: 0;
+        background: #0a0a0a;
+        min-height: 100vh;
+        min-height: 100dvh;
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      #splash {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #1a0a0a 0%, #0a0a0a 50%, #1a0606 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        gap: 16px;
+        color: #fff;
+      }
+      #splash .title {
+        font-size: 56px;
+        font-weight: 900;
+        color: #dc2626;
+        text-shadow: 4px 4px 0 #0a0a0a;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        text-align: center;
+      }
+      #splash .sub {
+        font-size: 11px;
+        letter-spacing: 0.4em;
+        color: #fbbf24;
+        margin-top: 4px;
+        text-align: center;
+      }
+      #splash .glove {
+        font-size: 64px;
+        animation: bob 1s ease-in-out infinite;
+      }
+      #splash .loading {
+        font-size: 12px;
+        color: #a1a1aa;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-top: 8px;
+      }
+      #splash .bar {
+        width: 200px;
+        height: 6px;
+        background: #27272a;
+        border: 2px solid #fbbf24;
+        position: relative;
+        overflow: hidden;
+      }
+      #splash .bar::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, #dc2626, #fbbf24);
+        animation: slide 1.2s ease-in-out infinite;
+      }
+      @keyframes bob {
+        0%,100% { transform: translateY(0) rotate(-8deg); }
+        50% { transform: translateY(-12px) rotate(8deg); }
+      }
+      @keyframes slide {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="splash">
+      <div class="glove">🥊</div>
+      <div>
+        <div class="title">BOSSBOX</div>
+        <div class="sub">★ MAIN EVENT ★</div>
+      </div>
+      <div class="bar"></div>
+      <div class="loading">Cargando ring…</div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
